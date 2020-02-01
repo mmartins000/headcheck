@@ -1,0 +1,699 @@
+{
+    "report": {
+        "version": "HeadCheck v0.1",
+        "format": "1",
+        "source": "https://github.com/mmartins000/headcheck",
+        "datetime": "2020-01-31 19:56:42 UTC",
+        "duration": 7
+    },
+    "https://youtube.com": {
+        "datetime": "2020-01-31 19:56:43 UTC",
+        "duration": 6,
+        "score": -4,
+        "grade": "C",
+        "tests": {
+            "methods": {
+                "display": "HTTP Methods",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
+                "result": {
+                    "found_methods": [
+                        "GET",
+                        "HEAD",
+                        "POST"
+                    ],
+                    "not_recommended": [
+                        "None"
+                    ]
+                },
+                "score": 0,
+                "pass": "pass"
+            },
+            "headers": {
+                "display": "HTTP Headers",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers",
+                "Access-Control-Allow-Origin": {
+                    "display": "Access-Control-Allow-Origin",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
+                    "expected": "https://youtube.com",
+                    "score": -1,
+                    "result": "Not implemented",
+                    "pass": "fail"
+                },
+                "Content-Security-Policy": {
+                    "display": "Content-Security-Policy",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+                    "source2": "https://developers.google.com/web/fundamentals/security/csp/",
+                    "expected": "default-src 'self'",
+                    "score": -4,
+                    "result": "Not implemented",
+                    "pass": "fail"
+                },
+                "Expect-CT": {
+                    "display": "Expect-CT",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT",
+                    "expected": "enforce, max-age=86400",
+                    "score": 0,
+                    "result": "Not implemented",
+                    "pass": "pass"
+                },
+                "Server": {
+                    "display": "Server",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server",
+                    "result": "YouTube Frontend Proxy",
+                    "score": "Skipped",
+                    "pass": "skipped"
+                },
+                "Strict-Transport-Security": {
+                    "display": "Strict-Transport-Security",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+                    "expected": "max-age=([0-9]{1,8}); (includeSubDomains)",
+                    "result": "max-age=31536000",
+                    "score": 1,
+                    "pass": "pass"
+                },
+                "X-Content-Type-Options": {
+                    "display": "X-Content-Options",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options",
+                    "expected": "nosniff",
+                    "result": "nosniff",
+                    "score": 0,
+                    "pass": "pass"
+                },
+                "X-Frame-Options": {
+                    "display": "X-Frame-Options",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options",
+                    "expected": "deny",
+                    "result": "SAMEORIGIN",
+                    "score": 1,
+                    "pass": "pass"
+                },
+                "X-XSS-Protection": {
+                    "display": "X-XSS-Protection",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+                    "expected": "1; mode=block",
+                    "result": "Found '0', but it only works for Internet Explorer",
+                    "score": 0,
+                    "pass": "pass"
+                },
+                "Public-Key-Pins": {
+                    "display": "Public-Key-Pins",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning",
+                    "expected": "pin-sha256=\"(.*?)\"; max-age=([0-9]{1,8}); (includeSubDomains);",
+                    "score": 0,
+                    "result": "Not implemented, but it's optional.",
+                    "pass": "pass"
+                },
+                "Referrer-Policy": {
+                    "display": "Referrer-Policy",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy",
+                    "expected": "no-referrer",
+                    "score": 0,
+                    "result": "Not implemented. Defaults to 'no-referrer-when-downgrade', which is ok.",
+                    "pass": "pass"
+                },
+                "Set-Cookie": {
+                    "display": "Set-Cookie",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies",
+                    "expected": "Secure; httponly; SameSite=Strict",
+                    "result": [
+                        "GPS=1; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 20:26:43 GMT",
+                        "VISITOR_INFO1_LIVE=KuPyvasA8N4; domain=.youtube.com; path=/; Expires: Wed, 29-07-2020 20:56:43 GMT; Secure; httponly",
+                        "YSC=UYUkU2D2aj0; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 19:56:47 GMT; httponly"
+                    ],
+                    "score": 1,
+                    "pass": "pass"
+                }
+            },
+            "sri": {
+                "display": "Subresource Integrity",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity",
+                "score": 0,
+                "result": {
+                    "valid": [],
+                    "invalid": [],
+                    "missing": []
+                },
+                "pass": "pass"
+            },
+            "ssl_tls": {
+                "display": "SSL/TLS",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security",
+                "expected": [
+                    "TLSv1.2",
+                    "TLSv1.3"
+                ],
+                "result": {
+                    "allowed": [
+                        "TLSv1",
+                        "TLSv1.1",
+                        "TLSv1.2",
+                        "TLSv1.3"
+                    ],
+                    "denied": [
+                        "SSLv3"
+                    ]
+                },
+                "score": -2,
+                "pass": "fail"
+            },
+            "certificate": {
+                "display": "X.509 Certificate",
+                "source": "https://developer.mozilla.org/en-US/docs/Mozilla/Security/x509_Certificates",
+                "ciphers": {
+                    "testname": "Selected ciphers",
+                    "result": [
+                        "TLS_AES_256_GCM_SHA384",
+                        "TLSv1.3",
+                        256
+                    ],
+                    "score": 0,
+                    "pass": "info"
+                },
+                "issued_to": {
+                    "score": 0,
+                    "pass": "pass",
+                    "testname": "Issued to",
+                    "result": "*.google.com, *.android.com, *.appengine.google.com, *.cloud.google.com, *.crowdsource.google.com, *.g.co, *.gcp.gvt2.com, *.gcpcdn.gvt1.com, *.ggpht.cn, *.gkecnapps.cn, *.google-analytics.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.googleadapis.com, *.googleapis.cn, *.googlecnapps.cn, *.googlecommerce.com, *.googlevideo.com, *.gstatic.cn, *.gstatic.com, *.gstaticcnapps.cn, *.gvt1.com, *.gvt2.com, *.metric.gstatic.com, *.urchin.com, *.url.google.com, *.wear.gkecnapps.cn, *.youtube-nocookie.com, *.youtube.com, *.youtubeeducation.com, *.youtubekids.com, *.yt.be, *.ytimg.com, android.clients.google.com, android.com, developer.android.google.cn, developers.android.google.cn, g.co, ggpht.cn, gkecnapps.cn, goo.gl, google-analytics.com, google.com, googlecnapps.cn, googlecommerce.com, source.android.google.cn, urchin.com, www.goo.gl, youtu.be, <b>youtube.com</b>, youtubeeducation.com, youtubekids.com, yt.be"
+                },
+                "issued_by": {
+                    "testname": "Issued by",
+                    "result": "GTS CA 1O1",
+                    "score": 0,
+                    "pass": "info"
+                },
+                "not_before": {
+                    "testname": "Not Before",
+                    "result": "2020-01-14 09:35:27",
+                    "score": 0,
+                    "pass": "pass"
+                },
+                "not_after": {
+                    "testname": "Not After",
+                    "result": "2020-04-07 09:35:27",
+                    "score": 0,
+                    "pass": "pass"
+                }
+            },
+            "http_redir": {
+                "display": "HTTP Redirect",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+                "expected": "301 or 302",
+                "status_code": 301,
+                "score": 0,
+                "result": "Redirected to https://youtube.com/ with status code 301.",
+                "pass": "pass"
+            }
+        },
+        "raw_data": {
+            "headers": {
+                "display": "HTTP Headers",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers",
+                "data": {
+                    "content-encoding": [
+                        "Content-Encoding",
+                        "gzip"
+                    ],
+                    "content-type": [
+                        "Content-Type",
+                        "text/html; charset=utf-8"
+                    ],
+                    "cache-control": [
+                        "Cache-Control",
+                        "no-cache"
+                    ],
+                    "x-frame-options": [
+                        "X-Frame-Options",
+                        "SAMEORIGIN"
+                    ],
+                    "strict-transport-security": [
+                        "Strict-Transport-Security",
+                        "max-age=31536000"
+                    ],
+                    "x-content-type-options": [
+                        "X-Content-Type-Options",
+                        "nosniff"
+                    ],
+                    "p3p": [
+                        "P3P",
+                        "CP=\"This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=pt-PT for more info.\""
+                    ],
+                    "expires": [
+                        "Expires",
+                        "Tue, 27 Apr 1971 19:44:06 GMT"
+                    ],
+                    "date": [
+                        "Date",
+                        "Fri, 31 Jan 2020 19:56:43 GMT"
+                    ],
+                    "server": [
+                        "Server",
+                        "YouTube Frontend Proxy"
+                    ],
+                    "x-xss-protection": [
+                        "X-XSS-Protection",
+                        "0"
+                    ],
+                    "set-cookie": [
+                        "Set-Cookie",
+                        "VISITOR_INFO1_LIVE=KuPyvasA8N4; path=/; domain=.youtube.com; secure; expires=Wed, 29-Jul-2020 19:56:43 GMT; httponly; samesite=None, YSC=UYUkU2D2aj0; path=/; domain=.youtube.com; httponly, GPS=1; path=/; domain=.youtube.com; expires=Fri, 31-Jan-2020 20:26:43 GMT"
+                    ],
+                    "alt-svc": [
+                        "Alt-Svc",
+                        "quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000"
+                    ],
+                    "transfer-encoding": [
+                        "Transfer-Encoding",
+                        "chunked"
+                    ]
+                }
+            },
+            "certificate": {
+                "display": "X.509 Certificate",
+                "source": "https://developer.mozilla.org/en-US/docs/Mozilla/Security/x509_Certificates",
+                "data": {
+                    "subject": [
+                        [
+                            [
+                                "countryName",
+                                "US"
+                            ]
+                        ],
+                        [
+                            [
+                                "stateOrProvinceName",
+                                "California"
+                            ]
+                        ],
+                        [
+                            [
+                                "localityName",
+                                "Mountain View"
+                            ]
+                        ],
+                        [
+                            [
+                                "organizationName",
+                                "Google LLC"
+                            ]
+                        ],
+                        [
+                            [
+                                "commonName",
+                                "*.google.com"
+                            ]
+                        ]
+                    ],
+                    "issuer": [
+                        [
+                            [
+                                "countryName",
+                                "US"
+                            ]
+                        ],
+                        [
+                            [
+                                "organizationName",
+                                "Google Trust Services"
+                            ]
+                        ],
+                        [
+                            [
+                                "commonName",
+                                "GTS CA 1O1"
+                            ]
+                        ]
+                    ],
+                    "version": 3,
+                    "serialNumber": "A21C2575588C627D0800000000299727",
+                    "notBefore": "Jan 14 09:35:27 2020 GMT",
+                    "notAfter": "Apr  7 09:35:27 2020 GMT",
+                    "subjectAltName": [
+                        [
+                            "DNS",
+                            "*.google.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.android.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.appengine.google.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.cloud.google.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.crowdsource.google.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.g.co"
+                        ],
+                        [
+                            "DNS",
+                            "*.gcp.gvt2.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.gcpcdn.gvt1.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.ggpht.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.gkecnapps.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.google-analytics.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.ca"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.cl"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.co.in"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.co.jp"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.co.uk"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.ar"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.au"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.br"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.co"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.mx"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.tr"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.com.vn"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.de"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.es"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.fr"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.hu"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.it"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.nl"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.pl"
+                        ],
+                        [
+                            "DNS",
+                            "*.google.pt"
+                        ],
+                        [
+                            "DNS",
+                            "*.googleadapis.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.googleapis.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.googlecnapps.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.googlecommerce.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.googlevideo.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.gstatic.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.gstatic.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.gstaticcnapps.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.gvt1.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.gvt2.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.metric.gstatic.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.urchin.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.url.google.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.wear.gkecnapps.cn"
+                        ],
+                        [
+                            "DNS",
+                            "*.youtube-nocookie.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.youtube.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.youtubeeducation.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.youtubekids.com"
+                        ],
+                        [
+                            "DNS",
+                            "*.yt.be"
+                        ],
+                        [
+                            "DNS",
+                            "*.ytimg.com"
+                        ],
+                        [
+                            "DNS",
+                            "android.clients.google.com"
+                        ],
+                        [
+                            "DNS",
+                            "android.com"
+                        ],
+                        [
+                            "DNS",
+                            "developer.android.google.cn"
+                        ],
+                        [
+                            "DNS",
+                            "developers.android.google.cn"
+                        ],
+                        [
+                            "DNS",
+                            "g.co"
+                        ],
+                        [
+                            "DNS",
+                            "ggpht.cn"
+                        ],
+                        [
+                            "DNS",
+                            "gkecnapps.cn"
+                        ],
+                        [
+                            "DNS",
+                            "goo.gl"
+                        ],
+                        [
+                            "DNS",
+                            "google-analytics.com"
+                        ],
+                        [
+                            "DNS",
+                            "google.com"
+                        ],
+                        [
+                            "DNS",
+                            "googlecnapps.cn"
+                        ],
+                        [
+                            "DNS",
+                            "googlecommerce.com"
+                        ],
+                        [
+                            "DNS",
+                            "source.android.google.cn"
+                        ],
+                        [
+                            "DNS",
+                            "urchin.com"
+                        ],
+                        [
+                            "DNS",
+                            "www.goo.gl"
+                        ],
+                        [
+                            "DNS",
+                            "youtu.be"
+                        ],
+                        [
+                            "DNS",
+                            "youtube.com"
+                        ],
+                        [
+                            "DNS",
+                            "youtubeeducation.com"
+                        ],
+                        [
+                            "DNS",
+                            "youtubekids.com"
+                        ],
+                        [
+                            "DNS",
+                            "yt.be"
+                        ]
+                    ],
+                    "OCSP": [
+                        "http://ocsp.pki.goog/gts1o1"
+                    ],
+                    "caIssuers": [
+                        "http://pki.goog/gsr2/GTS1O1.crt"
+                    ],
+                    "crlDistributionPoints": [
+                        "http://crl.pki.goog/GTS1O1.crl"
+                    ]
+                }
+            },
+            "securitytxt": {
+                "display": "Securitytxt",
+                "source": "https://securitytxt.org/",
+                "data": "Not found"
+            },
+            "contribute": {
+                "display": "Contribute.json",
+                "source": "https://www.contributejson.org/",
+                "data": "Not found"
+            }
+        },
+        "recommendation": {
+            "disclaimer": "These are reasonable default values. Evaluate every HTTP Header and SRI in QA before use in production environment.",
+            "methods": {
+                "display": "HTTP Methods",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
+                "setting": [
+                    "GET",
+                    "HEAD",
+                    "POST"
+                ]
+            },
+            "headers": {
+                "display": "HTTP Headers",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers",
+                "expect-ct": {
+                    "display": "Expect-CT",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT",
+                    "setting": "Expect-CT: max-age=86400, enforce"
+                },
+                "referrer": {
+                    "display": "Referrer-Policy",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy",
+                    "setting": "Referrer-Policy: no-referrer, no-referrer-when-downgrade"
+                },
+                "x-frame": {
+                    "display": "X-Frame-Options",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options",
+                    "setting": "X-Frame-Options: deny"
+                },
+                "hsts": {
+                    "display": "Strict-Transport-Security",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+                    "setting": "Strict-Transport-Security: max-age=657000; includeSubDomains"
+                },
+                "xxss": {
+                    "display": "X-XSS-Protection",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+                    "setting": "X-XSS-Protection: 1; mode=block"
+                },
+                "set-cookie": {
+                    "display": "Set-Cookie",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies",
+                    "setting": [
+                        "GPS=1; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 20:26:43 GMT; Secure; HttpOnly; SameSite=Strict",
+                        "VISITOR_INFO1_LIVE=KuPyvasA8N4; domain=.youtube.com; path=/; Expires: Wed, 29-07-2020 20:56:43 GMT; Secure; httponly; SameSite=Strict",
+                        "YSC=UYUkU2D2aj0; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 19:56:47 GMT; httponly; Secure; SameSite=Strict"
+                    ]
+                },
+                "csp": {
+                    "display": "Content-Security-Policy",
+                    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+                    "setting": "Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; img-src 'self' https://i.ytimg.com; script-src 'self'; style-src 'self'; font-src 'self'"
+                }
+            },
+            "sri": {
+                "display": "Subresource Integrity",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity",
+                "setting": []
+            }
+        }
+    }
+}

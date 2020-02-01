@@ -1,0 +1,653 @@
+
+    <html lang=en>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+            crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+            object-src 'none'; font-src https://use.fontawesome.com; 
+            style-src 'self' 'unsafe-inline'">
+        <style>
+            .alert-grade {
+                padding: 0.1rem 0.6rem;
+                margin-bottom: unset;
+            }
+            .table th.test {
+                width: 30%;
+            }
+            .table th.pass {
+                width: 5%;
+                text-align: center;
+            }
+            .table th.score {
+                width: 10%;
+                text-align: center;
+            }
+            .table th.result {
+                width: 55%;
+            }
+            .table td.pass {
+                text-align: center;
+            }
+            .table td.score {
+                text-align: center;
+            }
+            
+            /* Github triangle */
+            .github-corner-svg {
+                fill: #151513;
+                color: #fff;
+                position: absolute;
+                top: 0;
+                border: 0;
+                right: 0;
+            }
+            
+            .octo-arm {
+                transform-origin: 130px 106px;
+            }
+            
+            /* Github anim */
+            .github-corner:hover .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+            @keyframes octocat-wave {
+                0%, 100% {
+                    transform: rotate(0)
+                }
+                20%, 60% {
+                    transform: rotate(-25deg)
+                }
+                40%, 80% {
+                    transform: rotate(10deg)
+                }
+            }
+            @media (max-width: 500px) {
+                .github-corner:hover .octo-arm {
+                    animation: none
+                }
+                .github-corner .octo-arm {
+                    animation: octocat-wave 560ms ease-in-out
+                }
+            }
+        </style>
+    </head>
+    <body>
+    <a href="https://github.com/mmartins000/headcheck/" target="_blank" class="github-corner" 
+    aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true" class="github-corner-svg">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 
+        123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" 
+        fill="currentColor" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 
+        119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 
+        C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 
+        C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 
+        C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 
+        C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" 
+        fill="currentColor" class="octo-body"></path>
+    </svg>
+    </a>
+    <div class="container">
+    <div class="py-5 text-center">
+        <i class="fas fa-heading fa-3x"></i>
+            <h2>HeadCheck v0.1</h2><p class="lead">2020-01-31 19:56:42 UTC</p></div> <!-- py-5 --><div class="accordion" id="accordionSites"><div class="card"><div class="card-header d-flex justify-content-between" id="heading1"><div align = "left">  <h2 class="mb-0">    <button class="btn btn-link" type="button" data-toggle="collapse"data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">youtube.com    </button>  </h2></div><div class="alert alert-grade alert-warning" role="alert" align="right">  <h2 class="mb-0">C</h2></div></div> <!-- card-header end --><div id="collapse1" class="collapse show" aria-labelledby="heading1"data-parent="#accordionSites">  <div class="card-body"><nav>  <div class="nav nav-tabs" id="nav-tab1" role="tablist">    <a class="nav-item nav-link active" id="tablinkAssessment1" data-toggle="tab"    href="#tabAssessment1" role="tab" aria-controls="tabAssessment1"                aria-selected="true">Evaluation</a>    <a class="nav-item nav-link" id="tablinkRawData1        " data-toggle="tab" href="#tabRawData1"        role="tab" aria-controls="tabRawData1" aria-selected="true">Raw Data</a>    <a class="nav-item nav-link" id="tablinkRec1        " data-toggle="tab" href="#tabRec1"        role="tab" aria-controls="tabRec1" aria-selected="true">Recommendation</a>  </div></nav><div class="tab-content" id="myTabContent1">  <div class="tab-pane fade show active" id="tabAssessment1" role="tabpanel"    aria-labelledby="tablinkAssessment1">    <br>    <p><i class="fas fa-clock"></i> 2020-01-31 19:56:43 UTC    &nbsp&nbsp <i class="fas fa-stopwatch"></i> 0:00:06    </p>     <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP Methods</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="pass">Pass</th>
+                      <th scope="col" class="score">Score</th>
+                      <th scope="col" class="result">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">Methods</th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td><b>Found:</b> GET, HEAD, POST; <br><b>Not recommended:</b> None</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP Headers</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="pass">Pass</th>
+                      <th scope="col" class="score">Score</th>
+                      <th scope="col" class="result">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Access-Control-Allow-Origin</a></th>           <td class="pass"><i class="fas fa-times-circle fa text-danger"></i></td>           <td class="score">-1</td>           <td>Not implemented</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content-Security-Policy</a></th>           <td class="pass"><i class="fas fa-times-circle fa text-danger"></i></td>           <td class="score">-4</td>           <td>Not implemented</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT">Expect-CT</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>Not implemented</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server">Server</a></th>           <td class="pass"><i class="fas fa-exclamation-circle text-warning"></i></td>           <td class="score">Skipped</td>           <td>YouTube Frontend Proxy</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">1</td>           <td>max-age=31536000</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Options</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>nosniff</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">1</td>           <td>SAMEORIGIN</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>Found '0', but it only works for Internet Explorer</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning">Public-Key-Pins</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>Not implemented, but it's optional.</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>Not implemented. Defaults to 'no-referrer-when-downgrade', which is ok.</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies">Set-Cookie</a></th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">1</td>           <td> Set-Cookie: GPS=1; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 20:26:43 GMT<br>Set-Cookie: VISITOR_INFO1_LIVE=KuPyvasA8N4; domain=.youtube.com; path=/; Expires: Wed, 29-07-2020 20:56:43 GMT; Secure; httponly<br>Set-Cookie: YSC=UYUkU2D2aj0; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 19:56:47 GMT; httponly</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="pass">Pass</th>
+                      <th scope="col" class="score">Score</th>
+                      <th scope="col" class="result">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">SRI Check</th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td><b>Valid:</b> None; <br><b>Invalid:</b> None; <br><b>Missing:</b> None</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security">SSL/TLS</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="pass">Pass</th>
+                      <th scope="col" class="score">Score</th>
+                      <th scope="col" class="result">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">Ciphers</th>           <td class="pass"><i class="fas fa-times-circle fa text-danger"></i></td>           <td class="score">-2</td>           <td><b>Allowed:</b> TLSv1, TLSv1.1, TLSv1.2, TLSv1.3; <br><b>Denied:</b> SSLv3; <br><b>Expected:</b> TLSv1.2, TLSv1.3</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Mozilla/Security/x509_Certificates">X.509 Certificate</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="pass">Pass</th>
+                      <th scope="col" class="score">Score</th>
+                      <th scope="col" class="result">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">Selected ciphers</th>           <td class="pass"><i class="fas fa-info-circle text-info"></i></td>           <td class="score">0</td>           <td>('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)</td>        </tr>        <tr>           <th scope="row">Issued to</th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>*.google.com, *.android.com, *.appengine.google.com, *.cloud.google.com, *.crowdsource.google.com, *.g.co, *.gcp.gvt2.com, *.gcpcdn.gvt1.com, *.ggpht.cn, *.gkecnapps.cn, *.google-analytics.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.googleadapis.com, *.googleapis.cn, *.googlecnapps.cn, *.googlecommerce.com, *.googlevideo.com, *.gstatic.cn, *.gstatic.com, *.gstaticcnapps.cn, *.gvt1.com, *.gvt2.com, *.metric.gstatic.com, *.urchin.com, *.url.google.com, *.wear.gkecnapps.cn, *.youtube-nocookie.com, *.youtube.com, *.youtubeeducation.com, *.youtubekids.com, *.yt.be, *.ytimg.com, android.clients.google.com, android.com, developer.android.google.cn, developers.android.google.cn, g.co, ggpht.cn, gkecnapps.cn, goo.gl, google-analytics.com, google.com, googlecnapps.cn, googlecommerce.com, source.android.google.cn, urchin.com, www.goo.gl, youtu.be, <b>youtube.com</b>, youtubeeducation.com, youtubekids.com, yt.be</td>        </tr>        <tr>           <th scope="row">Issued by</th>           <td class="pass"><i class="fas fa-info-circle text-info"></i></td>           <td class="score">0</td>           <td>GTS CA 1O1</td>        </tr>        <tr>           <th scope="row">Not Before</th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>2020-01-14 09:35:27</td>        </tr>        <tr>           <th scope="row">Not After</th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>2020-04-07 09:35:27</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">HTTP Redirect</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="pass">Pass</th>
+                      <th scope="col" class="score">Score</th>
+                      <th scope="col" class="result">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">HTTPS Redirect</th>           <td class="pass"><i class="fas fa-check-circle fa text-success"></i></td>           <td class="score">0</td>           <td>Redirected to https://youtube.com/ with status code 301.</td>        </tr>
+                  </tbody>
+                </table>
+              </div> <!-- tabAssessment end --><div class="tab-pane fade" id="tabRawData1"   role="tabpanel" aria-labelledby="tablinkRawData1"><br>        <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP Headers</a></h3><pre><code>{
+    "content-encoding": [
+        "Content-Encoding",
+        "gzip"
+    ],
+    "content-type": [
+        "Content-Type",
+        "text/html; charset=utf-8"
+    ],
+    "cache-control": [
+        "Cache-Control",
+        "no-cache"
+    ],
+    "x-frame-options": [
+        "X-Frame-Options",
+        "SAMEORIGIN"
+    ],
+    "strict-transport-security": [
+        "Strict-Transport-Security",
+        "max-age=31536000"
+    ],
+    "x-content-type-options": [
+        "X-Content-Type-Options",
+        "nosniff"
+    ],
+    "p3p": [
+        "P3P",
+        "CP=\"This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=pt-PT for more info.\""
+    ],
+    "expires": [
+        "Expires",
+        "Tue, 27 Apr 1971 19:44:06 GMT"
+    ],
+    "date": [
+        "Date",
+        "Fri, 31 Jan 2020 19:56:43 GMT"
+    ],
+    "server": [
+        "Server",
+        "YouTube Frontend Proxy"
+    ],
+    "x-xss-protection": [
+        "X-XSS-Protection",
+        "0"
+    ],
+    "set-cookie": [
+        "Set-Cookie",
+        "VISITOR_INFO1_LIVE=KuPyvasA8N4; path=/; domain=.youtube.com; secure; expires=Wed, 29-Jul-2020 19:56:43 GMT; httponly; samesite=None, YSC=UYUkU2D2aj0; path=/; domain=.youtube.com; httponly, GPS=1; path=/; domain=.youtube.com; expires=Fri, 31-Jan-2020 20:26:43 GMT"
+    ],
+    "alt-svc": [
+        "Alt-Svc",
+        "quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000"
+    ],
+    "transfer-encoding": [
+        "Transfer-Encoding",
+        "chunked"
+    ]
+}</code></pre>        <h3><a href ="https://developer.mozilla.org/en-US/docs/Mozilla/Security/x509_Certificates">X.509 Certificate</a></h3><pre><code>{
+    "subject": [
+        [
+            [
+                "countryName",
+                "US"
+            ]
+        ],
+        [
+            [
+                "stateOrProvinceName",
+                "California"
+            ]
+        ],
+        [
+            [
+                "localityName",
+                "Mountain View"
+            ]
+        ],
+        [
+            [
+                "organizationName",
+                "Google LLC"
+            ]
+        ],
+        [
+            [
+                "commonName",
+                "*.google.com"
+            ]
+        ]
+    ],
+    "issuer": [
+        [
+            [
+                "countryName",
+                "US"
+            ]
+        ],
+        [
+            [
+                "organizationName",
+                "Google Trust Services"
+            ]
+        ],
+        [
+            [
+                "commonName",
+                "GTS CA 1O1"
+            ]
+        ]
+    ],
+    "version": 3,
+    "serialNumber": "A21C2575588C627D0800000000299727",
+    "notBefore": "Jan 14 09:35:27 2020 GMT",
+    "notAfter": "Apr  7 09:35:27 2020 GMT",
+    "subjectAltName": [
+        [
+            "DNS",
+            "*.google.com"
+        ],
+        [
+            "DNS",
+            "*.android.com"
+        ],
+        [
+            "DNS",
+            "*.appengine.google.com"
+        ],
+        [
+            "DNS",
+            "*.cloud.google.com"
+        ],
+        [
+            "DNS",
+            "*.crowdsource.google.com"
+        ],
+        [
+            "DNS",
+            "*.g.co"
+        ],
+        [
+            "DNS",
+            "*.gcp.gvt2.com"
+        ],
+        [
+            "DNS",
+            "*.gcpcdn.gvt1.com"
+        ],
+        [
+            "DNS",
+            "*.ggpht.cn"
+        ],
+        [
+            "DNS",
+            "*.gkecnapps.cn"
+        ],
+        [
+            "DNS",
+            "*.google-analytics.com"
+        ],
+        [
+            "DNS",
+            "*.google.ca"
+        ],
+        [
+            "DNS",
+            "*.google.cl"
+        ],
+        [
+            "DNS",
+            "*.google.co.in"
+        ],
+        [
+            "DNS",
+            "*.google.co.jp"
+        ],
+        [
+            "DNS",
+            "*.google.co.uk"
+        ],
+        [
+            "DNS",
+            "*.google.com.ar"
+        ],
+        [
+            "DNS",
+            "*.google.com.au"
+        ],
+        [
+            "DNS",
+            "*.google.com.br"
+        ],
+        [
+            "DNS",
+            "*.google.com.co"
+        ],
+        [
+            "DNS",
+            "*.google.com.mx"
+        ],
+        [
+            "DNS",
+            "*.google.com.tr"
+        ],
+        [
+            "DNS",
+            "*.google.com.vn"
+        ],
+        [
+            "DNS",
+            "*.google.de"
+        ],
+        [
+            "DNS",
+            "*.google.es"
+        ],
+        [
+            "DNS",
+            "*.google.fr"
+        ],
+        [
+            "DNS",
+            "*.google.hu"
+        ],
+        [
+            "DNS",
+            "*.google.it"
+        ],
+        [
+            "DNS",
+            "*.google.nl"
+        ],
+        [
+            "DNS",
+            "*.google.pl"
+        ],
+        [
+            "DNS",
+            "*.google.pt"
+        ],
+        [
+            "DNS",
+            "*.googleadapis.com"
+        ],
+        [
+            "DNS",
+            "*.googleapis.cn"
+        ],
+        [
+            "DNS",
+            "*.googlecnapps.cn"
+        ],
+        [
+            "DNS",
+            "*.googlecommerce.com"
+        ],
+        [
+            "DNS",
+            "*.googlevideo.com"
+        ],
+        [
+            "DNS",
+            "*.gstatic.cn"
+        ],
+        [
+            "DNS",
+            "*.gstatic.com"
+        ],
+        [
+            "DNS",
+            "*.gstaticcnapps.cn"
+        ],
+        [
+            "DNS",
+            "*.gvt1.com"
+        ],
+        [
+            "DNS",
+            "*.gvt2.com"
+        ],
+        [
+            "DNS",
+            "*.metric.gstatic.com"
+        ],
+        [
+            "DNS",
+            "*.urchin.com"
+        ],
+        [
+            "DNS",
+            "*.url.google.com"
+        ],
+        [
+            "DNS",
+            "*.wear.gkecnapps.cn"
+        ],
+        [
+            "DNS",
+            "*.youtube-nocookie.com"
+        ],
+        [
+            "DNS",
+            "*.youtube.com"
+        ],
+        [
+            "DNS",
+            "*.youtubeeducation.com"
+        ],
+        [
+            "DNS",
+            "*.youtubekids.com"
+        ],
+        [
+            "DNS",
+            "*.yt.be"
+        ],
+        [
+            "DNS",
+            "*.ytimg.com"
+        ],
+        [
+            "DNS",
+            "android.clients.google.com"
+        ],
+        [
+            "DNS",
+            "android.com"
+        ],
+        [
+            "DNS",
+            "developer.android.google.cn"
+        ],
+        [
+            "DNS",
+            "developers.android.google.cn"
+        ],
+        [
+            "DNS",
+            "g.co"
+        ],
+        [
+            "DNS",
+            "ggpht.cn"
+        ],
+        [
+            "DNS",
+            "gkecnapps.cn"
+        ],
+        [
+            "DNS",
+            "goo.gl"
+        ],
+        [
+            "DNS",
+            "google-analytics.com"
+        ],
+        [
+            "DNS",
+            "google.com"
+        ],
+        [
+            "DNS",
+            "googlecnapps.cn"
+        ],
+        [
+            "DNS",
+            "googlecommerce.com"
+        ],
+        [
+            "DNS",
+            "source.android.google.cn"
+        ],
+        [
+            "DNS",
+            "urchin.com"
+        ],
+        [
+            "DNS",
+            "www.goo.gl"
+        ],
+        [
+            "DNS",
+            "youtu.be"
+        ],
+        [
+            "DNS",
+            "youtube.com"
+        ],
+        [
+            "DNS",
+            "youtubeeducation.com"
+        ],
+        [
+            "DNS",
+            "youtubekids.com"
+        ],
+        [
+            "DNS",
+            "yt.be"
+        ]
+    ],
+    "OCSP": [
+        "http://ocsp.pki.goog/gts1o1"
+    ],
+    "caIssuers": [
+        "http://pki.goog/gsr2/GTS1O1.crt"
+    ],
+    "crlDistributionPoints": [
+        "http://crl.pki.goog/GTS1O1.crl"
+    ]
+}</code></pre>        <h3><a href ="https://securitytxt.org/">Securitytxt</a></h3><pre><code>"Not found"</code></pre>        <h3><a href ="https://www.contributejson.org/">Contribute.json</a></h3><pre><code>"Not found"</code></pre>
+          </div> <!-- tabRawData end -->
+        <div class="tab-pane fade" id="tabRec1"   role="tabpanel" aria-labelledby="tablinkRec1"><br>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Warning!</strong>
+            These are reasonable default values. Evaluate every HTTP Header and SRI in QA before use in production environment.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP Methods</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="result">Recommended Settings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">Methods</th>           <td>GET, HEAD, POST</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP Headers</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="result">Recommended Settings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT">Expect-CT</a></th>           <td>Expect-CT: max-age=86400, enforce</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a></th>           <td>Referrer-Policy: no-referrer, no-referrer-when-downgrade</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a></th>           <td>X-Frame-Options: deny</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a></th>           <td>Strict-Transport-Security: max-age=657000; includeSubDomains</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a></th>           <td>X-XSS-Protection: 1; mode=block</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies">Set-Cookie</a></th>           <td>Set-Cookie: GPS=1; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 20:26:43 GMT; Secure; HttpOnly; SameSite=Strict<hr>Set-Cookie: VISITOR_INFO1_LIVE=KuPyvasA8N4; domain=.youtube.com; path=/; Expires: Wed, 29-07-2020 20:56:43 GMT; Secure; httponly; SameSite=Strict<hr>Set-Cookie: YSC=UYUkU2D2aj0; domain=.youtube.com; path=/; Expires: Fri, 31-01-2020 19:56:47 GMT; httponly; Secure; SameSite=Strict</td>        </tr>        <tr>           <th scope="row"><a href ="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content-Security-Policy</a></th>           <td>Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; img-src 'self' https://i.ytimg.com; script-src 'self'; style-src 'self'; font-src 'self'</td>        </tr>
+                  </tbody>
+                </table>
+                 <h3><a href ="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a></h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="test">Test</th>
+                      <th scope="col" class="result">Recommended Settings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>           <th scope="row">SRI Check</th>           <td>None</td>        </tr>
+                  </tbody>
+                </table>
+            
+          </div> <!-- tabRec end -->
+        
+        </div> <!-- myTabContent end -->
+          </div> <!-- card-body end --></div> <!-- collapse end --></div> <!-- card end -->
+    <p><br></p>
+    </div> <!-- accordion end -->
+    </div> <!-- container end -->
+    </body>
+    </html>
+    

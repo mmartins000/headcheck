@@ -33,6 +33,7 @@ Install with: $ pip install requests urllib3 packaging
 
 ### Usage
 
+```
 usage: headcheck.py [-h] [-s HOSTSCAN | -i INPUTSCAN | -l LOADFILE] [-v] [-q] [-j JSON] [-r REPORT] [-o] [--no-browser]
                     [--no-check-headers] [--no-check-tls] [--no-check-httpredir] [--no-check-methods] [--no-check-metatags]
                     [--no-check-sri] [--no-check-version] [--no-check-certificate] [--no-check-optional]
@@ -67,13 +68,15 @@ optional arguments:
                         Skip Connection check
   --no-recommendation   Skip Recommendation
   --no-warning          Skip Warning message
-  
+```
+
 ### Example
 
-/usr/local/bin/python3.8 /Users/username/Documents/headcheck/headcheck.py -i sitelist.txt -j headcheck.json -r headcheck.html -o --no-browser
+```
+$ /usr/local/bin/python3.8 /Users/username/Documents/headcheck/headcheck.py -i sitelist.txt -j headcheck.json -r headcheck.html -o --no-browser
 Evaluating youtube.com
 Done in 7 seconds.
-
+```
 
 ### Report
 

@@ -1,7 +1,6 @@
 Headcheck
 =========
 
-![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/mmartins000/headcheck)
 ![GPL License](https://img.shields.io/github/license/mmartins000/headcheck)
 
 ## Overview

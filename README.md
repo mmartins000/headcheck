@@ -1,7 +1,6 @@
 Headcheck
 =========
 
-![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/mmartins000/headcheck)
 ![GPL License](https://img.shields.io/github/license/mmartins000/headcheck)
 
 ## Overview
@@ -14,7 +13,8 @@ They also provide a recommendation that shall be tested in QA prior to implement
 Headcheck was tested with Python 3.8 on macOS 10.14.6 and 10.15.3.
 
 Dependencies are: requests, urllib3, packaging
-Install with: $ pip install requests urllib3 packaging
+
+Install with: `$ pip install requests urllib3 packaging`
 
 #### Advantages
 - It can be run in internal networks, and doesn't depend on DNS servers.
@@ -34,7 +34,8 @@ Install with: $ pip install requests urllib3 packaging
 
 ### Usage
 
-usage: headcheck.py [-h] [-s HOSTSCAN | -i INPUTSCAN | -l LOADFILE] [-v] [-q] [-j JSON] [-r REPORT] [-o] [--no-browser]
+```
+headcheck.py [-h] [-s HOSTSCAN | -i INPUTSCAN | -l LOADFILE] [-v] [-q] [-j JSON] [-r REPORT] [-o] [--no-browser]
                     [--no-check-headers] [--no-check-tls] [--no-check-httpredir] [--no-check-methods] [--no-check-metatags]
                     [--no-check-sri] [--no-check-version] [--no-check-certificate] [--no-check-optional]
                     [--no-check-connection] [--no-recommendation] [--no-warning]
@@ -68,17 +69,30 @@ optional arguments:
                         Skip Connection check
   --no-recommendation   Skip Recommendation
   --no-warning          Skip Warning message
-  
+```
+
 ### Example
 
+```
 /usr/local/bin/python3.8 /Users/username/Documents/headcheck/headcheck.py -i sitelist.txt -j headcheck.json -r headcheck.html -o --no-browser
 Evaluating youtube.com
 Done in 7 seconds.
-
+```
 
 ### Report
 
 For the example above, the script will evaluate all sites listed in sitelist.txt (except the ones commented out).
 A file headcheck.json will be created with all the information collected and recommendations.
 A HTML page headcheck.html will also be created. Both files will be in the root directory of the script.
-You can check the screenshots folder for images of HTML report when the script was executed poiting to youtube.com.
+You can check the screenshots for images of HTML report when the script was executed pointing to youtube.com.
+
+### Screenshots
+
+#### Evaluation tab
+![Evaluation tab](screenshots/headcheck-tab1-evaluation.png)
+
+#### Raw data tab
+![Raw data tab](screenshots/headcheck-tab2-rawdata.png)
+
+#### Recommendation tab
+![Recommendation tab](screenshots/headcheck-tab3-recommendation.png)
